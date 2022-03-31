@@ -7,7 +7,7 @@ abstract class NumberTriviaLocalDataSource {
   /// Get the cached [NumberTriviaModel] which was gotten on last call while user has internet
   ///
   /// throw a [CacheException] if no cache data available
-  Future<NumberTriviaModel>? getLastNumberTrivia(int? number);
+  Future<NumberTriviaModel>? getLastNumberTrivia();
 
   /// call the http://numbersapi.com/random endpoint
   ///

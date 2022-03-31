@@ -7,10 +7,10 @@ abstract class NumberTriviaRemoteDataSource {
   /// call the http://numbersapi.com/{number} endpoint
   ///
   /// throw a [ServerException] for all type of error codes
-  Future<NumberTriviaModel>? getConcreteNumberTrivia(int? number);
+  Future<NumberTriviaModel> getConcreteNumberTrivia(int? number);
 
   /// call the http://numbersapi.com/random endpoint
   ///
   /// throw a [ServerException] for all type of error codes
-  Future<NumberTriviaModel>? getRandomNumberTrivia();
+  Future<NumberTriviaModel> getRandomNumberTrivia();
 }

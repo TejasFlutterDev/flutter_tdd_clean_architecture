@@ -3,7 +3,7 @@ import 'package:clean_architecture_tdd/features/number_trivia/domain/entities/nu
 import 'package:dartz/dartz.dart';
 
 abstract class NumberTriviaRepository {
-  Future<Either<Failure, NumberTrivia>>? getConcreteNumberTrivia(int? number);
+  Future<Either<Failure, NumberTrivia>> getConcreteNumberTrivia(int number);
 
-  Future<Either<Failure, NumberTrivia>>? getRandomNumberTrivia();
+  Future<Either<Failure, NumberTrivia>> getRandomNumberTrivia();
 }
