@@ -12,7 +12,6 @@ import 'package:mockito/mockito.dart';
 import 'get_concrete_number_trivia_test.mocks.dart';
 
 @GenerateMocks([NumberTriviaRepository])
-
 void main() {
   late GetRandomNumberTrivia usecase;
   late MockNumberTriviaRepository mockNumberTriviaRepository;
@@ -22,16 +21,16 @@ void main() {
     usecase = GetRandomNumberTrivia(mockNumberTriviaRepository);
   });
 
-  final tNumberTrivia = NumberTrivia(text: 'test', number: 1);
+  const tNumberTrivia = NumberTrivia(text: 'test', number: 1);
 
   test('should get trivia from the repository', () async {
     // arrange
     when(mockNumberTriviaRepository.getRandomNumberTrivia())
-        .thenAnswer((_) async =>  Right(tNumberTrivia));
+        .thenAnswer((_) async => const Right(tNumberTrivia));
     // act
     final result = await usecase(NoParams());
     // assert
-    expect(result,  Right(tNumberTrivia));
+    expect(result, const Right(tNumberTrivia));
     verify(mockNumberTriviaRepository.getRandomNumberTrivia());
     verifyNoMoreInteractions(mockNumberTriviaRepository);
   });
